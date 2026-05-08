@@ -74,6 +74,9 @@ export function Hero() {
         <p className="mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground md:text-xl">
           {t("hero.subtitle")}
         </p>
+        <p className="mt-6 text-sm font-medium uppercase tracking-[0.3em] text-accent">
+          Dizajn. Razvoj. Kvalitet.
+        </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <a
             href="#contact"
