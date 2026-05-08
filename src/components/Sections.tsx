@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { useI18n } from "@/lib/i18n";
 import { ArrowRight, Code2, Palette, Search, Sparkles } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function Hero() {
   const { t } = useI18n();
@@ -19,18 +20,33 @@ export function Hero() {
 
     const onMove = (e: MouseEvent) => {
       const rect = section.getBoundingClientRect();
-      targetX = e.clientX - rect.left;
-      targetY = e.clientY - rect.top;
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      // Push the blob to the nearest edge based on cursor position.
+      // We pick the closest edge (left/right/top/bottom) and pin one axis
+      // to that edge while letting the other axis follow the cursor.
+      const distLeft = x;
+      const distRight = rect.width - x;
+      const distTop = y;
+      const distBottom = rect.height - y;
+      const minDist = Math.min(distLeft, distRight, distTop, distBottom);
+      let edgeX = x;
+      let edgeY = y;
+      if (minDist === distLeft) edgeX = 0;
+      else if (minDist === distRight) edgeX = rect.width;
+      else if (minDist === distTop) edgeY = 0;
+      else edgeY = rect.height;
+      targetX = edgeX;
+      targetY = edgeY;
     };
     const tick = () => {
-      curX += (targetX - curX) * 0.08;
-      curY += (targetY - curY) * 0.08;
+      curX += (targetX - curX) * 0.06;
+      curY += (targetY - curY) * 0.06;
       blob.style.transform = `translate3d(${curX - 410}px, ${curY - 210}px, 0)`;
       raf = requestAnimationFrame(tick);
     };
-    const rect = section.getBoundingClientRect();
-    targetX = curX = rect.width / 2;
-    targetY = curY = 200;
+    targetX = curX = 0;
+    targetY = curY = 0;
     raf = requestAnimationFrame(tick);
     section.addEventListener("mousemove", onMove);
     return () => {
@@ -56,7 +72,7 @@ export function Hero() {
       />
       <div
         ref={blobRef}
-        className="pointer-events-none absolute left-0 top-0 h-[420px] w-[820px] rounded-full opacity-60 blur-3xl will-change-transform"
+        className="pointer-events-none absolute left-0 top-0 h-[420px] w-[820px] rounded-full opacity-20 blur-3xl will-change-transform"
         style={{
           backgroundImage: "var(--gradient-accent)",
         }}
@@ -313,12 +329,7 @@ export function Footer() {
     <footer className="border-t border-border py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-center md:flex-row md:text-left">
         <div className="flex items-center gap-3">
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-md text-sm font-bold text-white"
-            style={{ backgroundImage: "var(--gradient-accent)" }}
-          >
-            A&amp;V
-          </span>
+          <img src={logo} alt="A&V Web Studio" className="h-9 w-9 object-contain" />
           <span className="text-sm text-muted-foreground">
             {t("footer.tagline")}
           </span>

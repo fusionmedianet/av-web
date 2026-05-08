@@ -1,5 +1,6 @@
 import { useI18n } from "@/lib/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import logo from "@/assets/logo.png";
 
 export function Header() {
   const { t } = useI18n();
@@ -13,9 +14,7 @@ export function Header() {
     <header className="fixed top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a href="#top" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-foreground text-sm font-bold text-background">
-            A&amp;V
-          </span>
+          <img src={logo} alt="A&V Web Studio" className="h-9 w-9 object-contain" />
           <span className="hidden sm:inline">Web Studio</span>
         </a>
         <nav className="hidden items-center gap-8 md:flex">
