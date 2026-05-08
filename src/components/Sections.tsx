@@ -109,7 +109,7 @@ export function Services() {
 export function About() {
   const { t } = useI18n();
   return (
-    <section id="about" className="relative border-t border-border bg-muted/40 py-24 md:py-32">
+    <section id="about" className="relative border-t border-border bg-foreground text-background py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
