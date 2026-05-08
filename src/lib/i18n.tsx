@@ -94,8 +94,6 @@ const translations: Record<Lang, Dict> = {
     "about.title": "Small team. Big commitment.",
     "about.desc":
       "We are A&V — two craftsmen passionate about design and code. We believe every brand deserves a website that looks as good as it performs. We work closely with our clients, transparently and focused on long-term results.",
-    "about.stat2": "Happy clients",
-    "about.stat3": "Years of experience",
 
     "process.title": "Our process",
     "process.subtitle": "Simple, transparent and effective.",
