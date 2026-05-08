@@ -19,12 +19,16 @@ export function Hero() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute left-1/2 top-10 h-[420px] w-[820px] -translate-x-1/2 rounded-full blur-3xl animate-float-slow"
-        style={{ backgroundImage: "var(--gradient-accent)" }}
+        className="pointer-events-none absolute left-1/2 top-10 h-[420px] w-[820px] rounded-full blur-3xl"
+        style={{
+          backgroundImage: "var(--gradient-accent)",
+          animation: "float-slow 8s ease-in-out infinite",
+        }}
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute right-10 top-40 h-64 w-64 rounded-full bg-foreground/10 blur-3xl animate-drift"
+        className="pointer-events-none absolute right-10 top-40 h-64 w-64 rounded-full bg-foreground/10 blur-3xl"
+        style={{ animation: "drift 14s ease-in-out infinite" }}
         aria-hidden
       />
       <div className="relative mx-auto max-w-4xl px-6 text-center">
