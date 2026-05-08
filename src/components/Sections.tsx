@@ -113,19 +113,16 @@ export function About() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
-            <span className="text-xs font-medium uppercase tracking-wider text-accent">
+            <span className="text-xs font-medium uppercase tracking-wider text-background/60">
               {t("about.eyebrow")}
             </span>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
               {t("about.title")}
             </h2>
-            <div
-              className="mt-6 h-1 w-16 rounded-full"
-              style={{ backgroundImage: "var(--gradient-accent)" }}
-            />
+            <div className="mt-6 h-1 w-16 rounded-full bg-background" />
           </div>
           <div>
-            <p className="text-lg leading-relaxed text-muted-foreground">
+            <p className="text-lg leading-relaxed text-background/70">
               {t("about.desc")}
             </p>
           </div>
