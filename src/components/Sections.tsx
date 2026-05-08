@@ -59,7 +59,6 @@ export function Hero() {
         className="pointer-events-none absolute left-0 top-0 h-[420px] w-[820px] rounded-full opacity-60 blur-3xl will-change-transform"
         style={{
           backgroundImage: "var(--gradient-accent)",
-          animation: "float-slow 8s ease-in-out infinite",
         }}
         aria-hidden
       />
