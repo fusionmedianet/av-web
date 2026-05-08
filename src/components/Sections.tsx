@@ -67,8 +67,12 @@ export function Services() {
     { icon: Search, k: "3" },
   ];
   return (
-    <section id="services" className="relative border-t border-border py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="services" className="relative overflow-hidden border-t border-border py-24 md:py-32">
+      <div
+        className="pointer-events-none absolute inset-0 bg-grid opacity-40 [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <span className="text-xs font-medium uppercase tracking-wider text-accent">
             {t("nav.services")}
