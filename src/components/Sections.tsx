@@ -199,7 +199,11 @@ export function Contact() {
   };
   return (
     <section id="contact" className="relative overflow-hidden border-t border-border bg-foreground text-background py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6">
+      <div
+        className="pointer-events-none absolute inset-0 bg-grid-light animate-grid-pan [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-3xl px-6">
         <div className="text-center">
           <span className="text-xs font-medium uppercase tracking-wider text-background/60">
             {t("contact.eyebrow")}
