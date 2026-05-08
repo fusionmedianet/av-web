@@ -185,21 +185,16 @@ export function Contact() {
     setSent(true);
   };
   return (
-    <section id="contact" className="relative overflow-hidden border-t border-border bg-muted/40 py-24 md:py-32">
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[400px] opacity-40"
-        style={{ backgroundImage: "var(--gradient-hero)" }}
-        aria-hidden
-      />
+    <section id="contact" className="relative overflow-hidden border-t border-border bg-foreground text-background py-24 md:py-32">
       <div className="mx-auto max-w-3xl px-6">
         <div className="text-center">
-          <span className="text-xs font-medium uppercase tracking-wider text-accent">
+          <span className="text-xs font-medium uppercase tracking-wider text-background/60">
             {t("contact.eyebrow")}
           </span>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
             {t("contact.title")}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-background/70">
             {t("contact.desc")}
           </p>
         </div>
