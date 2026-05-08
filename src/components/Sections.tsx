@@ -139,8 +139,12 @@ export function Process() {
   const { t } = useI18n();
   const steps = ["1", "2", "3", "4"];
   return (
-    <section id="process" className="border-t border-border py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="process" className="relative border-t border-border py-24 md:py-32">
+      <div
+        className="pointer-events-none absolute inset-0 bg-dots opacity-50 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
           <span className="text-xs font-medium uppercase tracking-wider text-accent">
             {t("nav.process")}
