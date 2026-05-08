@@ -10,7 +10,7 @@ export function Hero() {
       className="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32"
     >
       <div
-        className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,black,transparent)]"
+        className="pointer-events-none absolute inset-0 bg-grid animate-grid-pan [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,black,transparent)]"
         aria-hidden
       />
       <div
@@ -18,8 +18,13 @@ export function Hero() {
         style={{ backgroundImage: "var(--gradient-hero)" }}
         aria-hidden
       />
-      <div className="absolute left-1/2 top-0 -z-10 h-[400px] w-[800px] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
+      <div
+        className="pointer-events-none absolute left-1/2 top-10 h-[420px] w-[820px] -translate-x-1/2 rounded-full blur-3xl animate-float-slow"
         style={{ backgroundImage: "var(--gradient-accent)" }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute right-10 top-40 h-64 w-64 rounded-full bg-foreground/10 blur-3xl animate-drift"
         aria-hidden
       />
       <div className="relative mx-auto max-w-4xl px-6 text-center">
