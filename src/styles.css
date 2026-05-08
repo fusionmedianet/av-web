@@ -34,42 +34,39 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.99 0.002 270);
-  --foreground: oklch(0.18 0.01 270);
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.15 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.01 270);
+  --card-foreground: oklch(0.15 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.01 270);
-  --primary: oklch(0.18 0.01 270);
-  --primary-foreground: oklch(0.99 0.002 270);
-  --secondary: oklch(0.96 0.005 270);
-  --secondary-foreground: oklch(0.18 0.01 270);
-  --muted: oklch(0.96 0.005 270);
-  --muted-foreground: oklch(0.5 0.01 270);
-  --accent: oklch(0.7 0.18 50);
-  --accent-foreground: oklch(0.18 0.01 270);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.15 0 0);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.15 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.15 0 0);
+  --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(0.99 0.002 270);
-  --border: oklch(0.92 0.005 270);
-  --input: oklch(0.92 0.005 270);
-  --ring: oklch(0.18 0.01 270);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
+  --ring: oklch(0.15 0 0);
 
   --gradient-hero: radial-gradient(
     ellipse 80% 60% at 50% 0%,
-    oklch(0.85 0.15 50 / 0.35),
-    transparent 70%
-  ), radial-gradient(
-    ellipse 60% 50% at 20% 30%,
-    oklch(0.8 0.18 280 / 0.18),
+    oklch(0.85 0 0 / 0.5),
     transparent 70%
   );
-  --gradient-accent: linear-gradient(135deg, oklch(0.72 0.18 50), oklch(0.65 0.2 25));
-  --gradient-text: linear-gradient(135deg, oklch(0.18 0.01 270), oklch(0.45 0.15 50));
-  --grid-pattern: linear-gradient(to right, oklch(0.18 0.01 270 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.18 0.01 270 / 0.06) 1px, transparent 1px);
-  --shadow-soft: 0 1px 2px 0 oklch(0.18 0.01 270 / 0.04),
-    0 8px 24px -8px oklch(0.18 0.01 270 / 0.08);
-  --shadow-glow: 0 20px 60px -20px oklch(0.7 0.18 50 / 0.4);
+  --gradient-accent: linear-gradient(135deg, oklch(0.2 0 0), oklch(0.4 0 0));
+  --gradient-text: linear-gradient(180deg, oklch(0.15 0 0), oklch(0.45 0 0));
+  --grid-pattern: linear-gradient(to right, oklch(0.15 0 0 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.15 0 0 / 0.06) 1px, transparent 1px);
+  --dot-pattern: radial-gradient(oklch(0.15 0 0 / 0.15) 1px, transparent 1px);
+  --shadow-soft: 0 1px 2px 0 oklch(0.15 0 0 / 0.04),
+    0 12px 32px -12px oklch(0.15 0 0 / 0.12);
+  --shadow-glow: 0 20px 50px -20px oklch(0.15 0 0 / 0.45);
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -83,6 +80,11 @@
 @utility bg-grid {
   background-image: var(--grid-pattern);
   background-size: 48px 48px;
+}
+
+@utility bg-dots {
+  background-image: var(--dot-pattern);
+  background-size: 20px 20px;
 }
 
 @layer base {
