@@ -260,24 +260,39 @@ export function Contact() {
           className="mt-12 grid gap-4 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] md:p-8"
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <input
-              required
-              placeholder={t("contact.name")}
-              className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-accent"
-            />
-            <input
-              required
-              type="email"
-              placeholder={t("contact.email")}
-              className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-accent"
-            />
+            <label className="block text-left">
+              <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-foreground/70">
+                {t("contact.name")}
+              </span>
+              <input
+                required
+                placeholder={t("contact.name")}
+                className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-foreground"
+              />
+            </label>
+            <label className="block text-left">
+              <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-foreground/70">
+                {t("contact.email")}
+              </span>
+              <input
+                required
+                type="email"
+                placeholder={t("contact.email")}
+                className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-foreground"
+              />
+            </label>
           </div>
-          <textarea
-            required
-            rows={5}
-            placeholder={t("contact.message")}
-            className="w-full resize-none rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-accent"
-          />
+          <label className="block text-left">
+            <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-foreground/70">
+              {t("contact.message")}
+            </span>
+            <textarea
+              required
+              rows={5}
+              placeholder={t("contact.message")}
+              className="w-full resize-none rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-foreground"
+            />
+          </label>
           <button
             type="submit"
             className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white shadow-[var(--shadow-glow)] transition-transform hover:-translate-y-0.5"
