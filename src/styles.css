@@ -55,13 +55,34 @@
   --ring: oklch(0.18 0.01 270);
 
   --gradient-hero: radial-gradient(
-    ellipse at top,
-    oklch(0.96 0.04 50 / 0.6),
-    transparent 60%
+    ellipse 80% 60% at 50% 0%,
+    oklch(0.85 0.15 50 / 0.35),
+    transparent 70%
+  ), radial-gradient(
+    ellipse 60% 50% at 20% 30%,
+    oklch(0.8 0.18 280 / 0.18),
+    transparent 70%
   );
+  --gradient-accent: linear-gradient(135deg, oklch(0.72 0.18 50), oklch(0.65 0.2 25));
+  --gradient-text: linear-gradient(135deg, oklch(0.18 0.01 270), oklch(0.45 0.15 50));
+  --grid-pattern: linear-gradient(to right, oklch(0.18 0.01 270 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.18 0.01 270 / 0.06) 1px, transparent 1px);
   --shadow-soft: 0 1px 2px 0 oklch(0.18 0.01 270 / 0.04),
     0 8px 24px -8px oklch(0.18 0.01 270 / 0.08);
+  --shadow-glow: 0 20px 60px -20px oklch(0.7 0.18 50 / 0.4);
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility text-gradient {
+  background-image: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility bg-grid {
+  background-image: var(--grid-pattern);
+  background-size: 48px 48px;
 }
 
 @layer base {

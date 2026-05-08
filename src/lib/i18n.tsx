@@ -27,20 +27,14 @@ const translations: Record<Lang, Dict> = {
     "services.2.title": "Web Razvoj",
     "services.2.desc":
       "Brze, sigurne i skalabilne web aplikacije sa najnovijim tehnologijama.",
-    "services.3.title": "E-commerce",
+    "services.3.title": "SEO & Optimizacija",
     "services.3.desc":
-      "Online prodavnice koje pretvaraju posjetitelje u zadovoljne kupce.",
-    "services.4.title": "SEO & Optimizacija",
-    "services.4.desc":
       "Tehnička optimizacija i SEO za bolju vidljivost na Google-u.",
 
     "about.eyebrow": "O nama",
     "about.title": "Mali tim. Velika posvećenost.",
     "about.desc":
       "Mi smo A&V — dvojica zaljubljenika u dizajn i kod. Vjerujemo da svaki brend zaslužuje web stranicu koja izgleda jednako dobro koliko i radi. Radimo blisko sa klijentima, transparentno i sa fokusom na dugoročne rezultate.",
-    "about.stat1": "Završenih projekata",
-    "about.stat2": "Zadovoljnih klijenata",
-    "about.stat3": "Godina iskustva",
 
     "process.title": "Naš proces",
     "process.subtitle": "Jednostavan, transparentan i učinkovit.",
@@ -92,20 +86,14 @@ const translations: Record<Lang, Dict> = {
     "services.2.title": "Web Development",
     "services.2.desc":
       "Fast, secure and scalable web apps using the latest technologies.",
-    "services.3.title": "E-commerce",
+    "services.3.title": "SEO & Optimization",
     "services.3.desc":
-      "Online stores that turn visitors into loyal customers.",
-    "services.4.title": "SEO & Optimization",
-    "services.4.desc":
       "Technical optimization and SEO for better Google visibility.",
 
     "about.eyebrow": "About",
     "about.title": "Small team. Big commitment.",
     "about.desc":
       "We are A&V — two craftsmen passionate about design and code. We believe every brand deserves a website that looks as good as it performs. We work closely with our clients, transparently and focused on long-term results.",
-    "about.stat1": "Projects shipped",
-    "about.stat2": "Happy clients",
-    "about.stat3": "Years of experience",
 
     "process.title": "Our process",
     "process.subtitle": "Simple, transparent and effective.",
