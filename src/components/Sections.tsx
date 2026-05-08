@@ -313,12 +313,7 @@ export function Footer() {
     <footer className="border-t border-border py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-center md:flex-row md:text-left">
         <div className="flex items-center gap-3">
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-md text-sm font-bold text-white"
-            style={{ backgroundImage: "var(--gradient-accent)" }}
-          >
-            A&amp;V
-          </span>
+          <img src={logo} alt="A&V Web Studio" className="h-9 w-9 object-contain" />
           <span className="text-sm text-muted-foreground">
             {t("footer.tagline")}
           </span>
