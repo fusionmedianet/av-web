@@ -118,8 +118,12 @@ export function Services() {
 export function About() {
   const { t } = useI18n();
   return (
-    <section id="about" className="relative border-t border-border bg-foreground text-background py-24 md:py-32">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="about" className="relative overflow-hidden border-t border-border bg-foreground text-background py-24 md:py-32">
+      <div
+        className="pointer-events-none absolute inset-0 bg-grid-light animate-grid-pan [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
             <span className="text-xs font-medium uppercase tracking-wider text-background/60">
