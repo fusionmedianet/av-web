@@ -45,7 +45,6 @@ export function Hero() {
       blob.style.transform = `translate3d(${curX - 410}px, ${curY - 210}px, 0)`;
       raf = requestAnimationFrame(tick);
     };
-    const rect = section.getBoundingClientRect();
     targetX = curX = 0;
     targetY = curY = 0;
     raf = requestAnimationFrame(tick);
