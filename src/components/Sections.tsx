@@ -1,11 +1,47 @@
-import { useState, FormEvent } from "react";
+import { useState, useRef, useEffect, FormEvent } from "react";
 import { useI18n } from "@/lib/i18n";
 import { ArrowRight, Code2, Palette, Search, Sparkles } from "lucide-react";
 
 export function Hero() {
   const { t } = useI18n();
+  const sectionRef = useRef<HTMLElement>(null);
+  const blobRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const blob = blobRef.current;
+    if (!section || !blob) return;
+    let raf = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let curX = 0;
+    let curY = 0;
+
+    const onMove = (e: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      targetX = e.clientX - rect.left;
+      targetY = e.clientY - rect.top;
+    };
+    const tick = () => {
+      curX += (targetX - curX) * 0.08;
+      curY += (targetY - curY) * 0.08;
+      blob.style.transform = `translate3d(${curX - 410}px, ${curY - 210}px, 0)`;
+      raf = requestAnimationFrame(tick);
+    };
+    const rect = section.getBoundingClientRect();
+    targetX = curX = rect.width / 2;
+    targetY = curY = 200;
+    raf = requestAnimationFrame(tick);
+    section.addEventListener("mousemove", onMove);
+    return () => {
+      cancelAnimationFrame(raf);
+      section.removeEventListener("mousemove", onMove);
+    };
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="top"
       className="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32"
     >
@@ -19,7 +55,8 @@ export function Hero() {
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute left-1/2 top-10 h-[420px] w-[820px] rounded-full blur-3xl"
+        ref={blobRef}
+        className="pointer-events-none absolute left-0 top-0 h-[420px] w-[820px] rounded-full opacity-60 blur-3xl will-change-transform"
         style={{
           backgroundImage: "var(--gradient-accent)",
           animation: "float-slow 8s ease-in-out infinite",
