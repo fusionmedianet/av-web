@@ -253,6 +253,19 @@ export function Contact() {
           <p className="mx-auto mt-4 max-w-xl text-lg text-background/70">
             {t("contact.desc")}
           </p>
+          <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-background/80">
+            <a href="mailto:info@avstudio.site" className="transition-colors hover:text-background">
+              info@avstudio.site
+            </a>
+            <span className="hidden h-1 w-1 rounded-full bg-background/40 sm:inline-block" aria-hidden />
+            <a href="tel:+38762287834" className="transition-colors hover:text-background">
+              +387 62 287 834
+            </a>
+            <span className="hidden h-1 w-1 rounded-full bg-background/40 sm:inline-block" aria-hidden />
+            <a href="tel:+38761030437" className="transition-colors hover:text-background">
+              +387 61 030 437
+            </a>
+          </div>
         </div>
         <form
           onSubmit={onSubmit}
