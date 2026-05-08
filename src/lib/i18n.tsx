@@ -27,20 +27,14 @@ const translations: Record<Lang, Dict> = {
     "services.2.title": "Web Razvoj",
     "services.2.desc":
       "Brze, sigurne i skalabilne web aplikacije sa najnovijim tehnologijama.",
-    "services.3.title": "E-commerce",
+    "services.3.title": "SEO & Optimizacija",
     "services.3.desc":
-      "Online prodavnice koje pretvaraju posjetitelje u zadovoljne kupce.",
-    "services.4.title": "SEO & Optimizacija",
-    "services.4.desc":
       "Tehnička optimizacija i SEO za bolju vidljivost na Google-u.",
 
     "about.eyebrow": "O nama",
     "about.title": "Mali tim. Velika posvećenost.",
     "about.desc":
       "Mi smo A&V — dvojica zaljubljenika u dizajn i kod. Vjerujemo da svaki brend zaslužuje web stranicu koja izgleda jednako dobro koliko i radi. Radimo blisko sa klijentima, transparentno i sa fokusom na dugoročne rezultate.",
-    "about.stat1": "Završenih projekata",
-    "about.stat2": "Zadovoljnih klijenata",
-    "about.stat3": "Godina iskustva",
 
     "process.title": "Naš proces",
     "process.subtitle": "Jednostavan, transparentan i učinkovit.",
