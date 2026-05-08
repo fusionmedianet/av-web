@@ -6,52 +6,29 @@ import logo from "@/assets/logo.png";
 export function Hero() {
   const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
-  const blobRef = useRef<HTMLDivElement>(null);
+  const spotlightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const blob = blobRef.current;
-    if (!section || !blob) return;
-    let raf = 0;
-    let targetX = 0;
-    let targetY = 0;
-    let curX = 0;
-    let curY = 0;
+    const spotlight = spotlightRef.current;
+    if (!section || !spotlight) return;
 
     const onMove = (e: MouseEvent) => {
       const rect = section.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      // Push the blob to the nearest edge based on cursor position.
-      // We pick the closest edge (left/right/top/bottom) and pin one axis
-      // to that edge while letting the other axis follow the cursor.
-      const distLeft = x;
-      const distRight = rect.width - x;
-      const distTop = y;
-      const distBottom = rect.height - y;
-      const minDist = Math.min(distLeft, distRight, distTop, distBottom);
-      let edgeX = x;
-      let edgeY = y;
-      if (minDist === distLeft) edgeX = 0;
-      else if (minDist === distRight) edgeX = rect.width;
-      else if (minDist === distTop) edgeY = 0;
-      else edgeY = rect.height;
-      targetX = edgeX;
-      targetY = edgeY;
+      spotlight.style.setProperty("--x", `${x}px`);
+      spotlight.style.setProperty("--y", `${y}px`);
+      spotlight.style.opacity = "1";
     };
-    const tick = () => {
-      curX += (targetX - curX) * 0.06;
-      curY += (targetY - curY) * 0.06;
-      blob.style.transform = `translate3d(${curX - 410}px, ${curY - 210}px, 0)`;
-      raf = requestAnimationFrame(tick);
+    const onLeave = () => {
+      spotlight.style.opacity = "0";
     };
-    targetX = curX = 0;
-    targetY = curY = 0;
-    raf = requestAnimationFrame(tick);
     section.addEventListener("mousemove", onMove);
+    section.addEventListener("mouseleave", onLeave);
     return () => {
-      cancelAnimationFrame(raf);
       section.removeEventListener("mousemove", onMove);
+      section.removeEventListener("mouseleave", onLeave);
     };
   }, []);
 
@@ -61,26 +38,29 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-32"
     >
+      {/* Base subtle grid */}
       <div
-        className="pointer-events-none absolute inset-0 bg-grid animate-grid-pan [mask-image:radial-gradient(ellipse_60%_50%_at_50%_30%,black,transparent)]"
+        className="pointer-events-none absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_30%,black,transparent)]"
+        aria-hidden
+      />
+      {/* Bright grid revealed around cursor */}
+      <div
+        ref={spotlightRef}
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, oklch(0.15 0 0 / 0.35) 1px, transparent 1px), linear-gradient(to bottom, oklch(0.15 0 0 / 0.35) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+          WebkitMaskImage:
+            "radial-gradient(circle 220px at var(--x, 50%) var(--y, 50%), black, transparent 70%)",
+          maskImage:
+            "radial-gradient(circle 220px at var(--x, 50%) var(--y, 50%), black, transparent 70%)",
+        }}
         aria-hidden
       />
       <div
         className="pointer-events-none absolute inset-0"
         style={{ backgroundImage: "var(--gradient-hero)" }}
-        aria-hidden
-      />
-      <div
-        ref={blobRef}
-        className="pointer-events-none absolute left-0 top-0 h-[420px] w-[820px] rounded-full opacity-20 blur-3xl will-change-transform"
-        style={{
-          backgroundImage: "var(--gradient-accent)",
-        }}
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute right-10 top-40 h-64 w-64 rounded-full bg-foreground/10 blur-3xl"
-        style={{ animation: "drift 14s ease-in-out infinite" }}
         aria-hidden
       />
       <div className="relative mx-auto max-w-4xl px-6 text-center">
