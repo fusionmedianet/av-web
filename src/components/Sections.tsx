@@ -343,6 +343,16 @@ export function Contact() {
   const [sent, setSent] = useState(false);
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const form = e.currentTarget as HTMLFormElement;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "");
+    const email = String(data.get("email") ?? "");
+    const message = String(data.get("message") ?? "");
+    const subject = encodeURIComponent(`Nova poruka sa sajta — ${name}`);
+    const body = encodeURIComponent(
+      `Ime: ${name}\nEmail: ${email}\n\nPoruka:\n${message}`,
+    );
+    window.location.href = `mailto:business@avstudio.site?subject=${subject}&body=${body}`;
     setSent(true);
   };
   return (
@@ -375,6 +385,9 @@ export function Contact() {
               +387 61 030 437
             </a>
           </div>
+          <p className="mt-4 text-xs text-background/40">
+            Founderi: Hujdur Vedad &amp; Hodžić Alem
+          </p>
         </div>
         <form
           onSubmit={onSubmit}
