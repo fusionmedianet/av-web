@@ -6,6 +6,7 @@ import {
   Services,
   About,
   Process,
+  Pricing,
   Contact,
   Footer,
 } from "@/components/Sections";
