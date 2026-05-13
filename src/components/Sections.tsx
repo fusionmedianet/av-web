@@ -385,9 +385,6 @@ export function Contact() {
               +387 61 030 437
             </a>
           </div>
-          <p className="mt-4 text-xs text-background/40">
-            Founderi: Hujdur Vedad &amp; Hodžić Alem
-          </p>
         </div>
         <form
           onSubmit={onSubmit}
@@ -458,8 +455,9 @@ export function Footer() {
             {t("footer.tagline")}
           </span>
         </div>
-        <div className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} A&amp;V Web Studio. {t("footer.rights")}
+        <div className="flex flex-col items-center gap-1 text-xs text-muted-foreground md:items-end">
+          <span>Founderi: Hujdur Vedad &amp; Hodžić Alem</span>
+          <span>© {new Date().getFullYear()} A&amp;V Web Studio. {t("footer.rights")}</span>
         </div>
       </div>
     </footer>
