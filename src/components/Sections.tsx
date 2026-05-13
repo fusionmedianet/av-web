@@ -272,21 +272,25 @@ export function Contact() {
           className="mt-12 grid gap-4 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] md:p-8"
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block text-left">
+            <label htmlFor="contact-name" className="block text-left">
               <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-foreground/70">
                 {t("contact.name")}
               </span>
               <input
+                id="contact-name"
+                name="name"
                 required
                 placeholder={t("contact.name")}
                 className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-foreground"
               />
             </label>
-            <label className="block text-left">
+            <label htmlFor="contact-email" className="block text-left">
               <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-foreground/70">
                 {t("contact.email")}
               </span>
               <input
+                id="contact-email"
+                name="email"
                 required
                 type="email"
                 placeholder={t("contact.email")}
@@ -294,11 +298,13 @@ export function Contact() {
               />
             </label>
           </div>
-          <label className="block text-left">
+          <label htmlFor="contact-message" className="block text-left">
             <span className="mb-2 block text-xs font-medium uppercase tracking-wider text-foreground/70">
               {t("contact.message")}
             </span>
             <textarea
+              id="contact-message"
+              name="message"
               required
               rows={5}
               placeholder={t("contact.message")}
