@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, FormEvent } from "react";
 import { useI18n } from "@/lib/i18n";
-import { ArrowRight, Code2, Palette, Search, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Code2, Palette, Search, Sparkles } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export function Hero() {
@@ -221,6 +221,115 @@ export function Process() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {t(`process.${k}.desc`)}
               </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Pricing() {
+  const { t } = useI18n();
+  const plans = [
+    {
+      key: "basic",
+      price: "500",
+      featured: false,
+      features: ["f1", "f2", "f3", "f4", "f5"],
+    },
+    {
+      key: "pro",
+      price: "800",
+      featured: true,
+      features: ["f1", "f2", "f3", "f4", "f5"],
+    },
+  ];
+  return (
+    <section id="pricing" className="relative border-t border-border py-24 md:py-32">
+      <div
+        className="pointer-events-none absolute inset-0 bg-grid opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-medium uppercase tracking-wider text-accent">
+            {t("pricing.eyebrow")}
+          </span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
+            {t("pricing.title")}
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            {t("pricing.subtitle")}
+          </p>
+        </div>
+        <div className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+          {plans.map((p) => (
+            <div
+              key={p.key}
+              className={`relative flex flex-col rounded-2xl border bg-card p-8 transition-all hover:-translate-y-1 ${
+                p.featured
+                  ? "border-accent/50 shadow-[var(--shadow-glow)]"
+                  : "border-border hover:border-accent/40 hover:shadow-[var(--shadow-soft)]"
+              }`}
+            >
+              {p.featured && (
+                <span
+                  className="absolute -top-3 right-6 rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider text-white shadow-[var(--shadow-glow)]"
+                  style={{ backgroundImage: "var(--gradient-accent)" }}
+                >
+                  {t("pricing.popular")}
+                </span>
+              )}
+              <h3 className="text-xl font-semibold">
+                {t(`pricing.${p.key}.name`)}
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                {t(`pricing.${p.key}.desc`)}
+              </p>
+              <div className="mt-6 flex items-baseline gap-1">
+                <span className="text-5xl font-semibold tracking-tight">
+                  {p.price}
+                </span>
+                <span className="text-sm font-medium text-muted-foreground">
+                  {t("pricing.currency")}
+                </span>
+              </div>
+              <div
+                className="mt-6 h-px w-full"
+                style={{ backgroundImage: "var(--gradient-accent)" }}
+              />
+              <ul className="mt-6 space-y-3">
+                {p.features.map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm">
+                    <span
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white"
+                      style={{ backgroundImage: "var(--gradient-accent)" }}
+                    >
+                      <Check className="h-3 w-3" />
+                    </span>
+                    <span className="text-foreground/80">
+                      {t(`pricing.${p.key}.${f}`)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#contact"
+                className={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all ${
+                  p.featured
+                    ? "text-white shadow-[var(--shadow-glow)] hover:-translate-y-0.5"
+                    : "border border-border bg-background text-foreground hover:bg-muted"
+                }`}
+                style={
+                  p.featured
+                    ? { backgroundImage: "var(--gradient-accent)" }
+                    : undefined
+                }
+              >
+                {t("pricing.cta")}
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           ))}
         </div>

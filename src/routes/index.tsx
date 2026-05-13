@@ -6,6 +6,7 @@ import {
   Services,
   About,
   Process,
+  Pricing,
   Contact,
   Footer,
 } from "@/components/Sections";
@@ -69,6 +70,7 @@ function Index() {
           <Services />
           <About />
           <Process />
+          <Pricing />
           <Contact />
         </main>
         <Footer />

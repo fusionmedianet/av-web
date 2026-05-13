@@ -8,6 +8,7 @@ export function Header() {
     { href: "#services", label: t("nav.services") },
     { href: "#about", label: t("nav.about") },
     { href: "#process", label: t("nav.process") },
+    { href: "#pricing", label: t("nav.pricing") },
     { href: "#contact", label: t("nav.contact") },
   ];
   return (
