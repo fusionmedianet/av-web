@@ -82,6 +82,7 @@ const translations: Record<Lang, Dict> = {
     "pricing.pro.f3": "Sistem rezervacija ili sličnu funkcionalnost",
     "pricing.pro.f4": "Korisnički nalozi i autentifikacija",
     "pricing.pro.f5": "Napredna SEO optimizacija",
+    "pricing.pro.f6": "Višejezičnost (promjena jezika)",
 
     "footer.tagline": "Dizajniramo digitalna iskustva koja ostavljaju utisak.",
     "footer.rights": "Sva prava zadržana.",
@@ -161,6 +162,7 @@ const translations: Record<Lang, Dict> = {
     "pricing.pro.f3": "Booking system or similar functionality",
     "pricing.pro.f4": "User accounts and authentication",
     "pricing.pro.f5": "Advanced SEO optimization",
+    "pricing.pro.f6": "Multi-language support (language switcher)",
 
     "footer.tagline": "We design digital experiences that leave a mark.",
     "footer.rights": "All rights reserved.",
