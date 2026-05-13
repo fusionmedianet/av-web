@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avwebstudio.lovable.app/sitemap.xml
