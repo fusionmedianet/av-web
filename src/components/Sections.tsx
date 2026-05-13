@@ -238,7 +238,12 @@ export function Pricing() {
       featured: false,
       features: ["f1", "f2", "f3", "f4", "f5"],
     },
+    {
+      key: "pro",
+      price: "800",
+      featured: true,
       features: ["f1", "f2", "f3", "f4", "f5", "f6"],
+    },
   ];
   return (
     <section id="pricing" className="relative border-t border-border py-24 md:py-32">
