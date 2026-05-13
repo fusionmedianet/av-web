@@ -70,6 +70,7 @@ function Index() {
           <Services />
           <About />
           <Process />
+          <Pricing />
           <Contact />
         </main>
         <Footer />
