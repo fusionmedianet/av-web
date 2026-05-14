@@ -100,6 +100,7 @@ const translations: Record<Lang, Dict> = {
     "hero.subtitle":
       "A&V Web Studio designs and builds fast, elegant and scalable websites for ambitious brands.",
     "hero.cta1": "Start a project",
+    "hero.slogan": "Design. Development. Quality.",
     "hero.cta2": "View services",
 
     "services.title": "What we do",
