@@ -71,6 +71,7 @@ function Index() {
           <Services />
           <About />
           <Process />
+          <Portfolio />
           <Pricing />
           <Contact />
         </main>
