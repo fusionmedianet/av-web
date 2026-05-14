@@ -9,6 +9,7 @@ const translations: Record<Lang, Dict> = {
     "nav.services": "Usluge",
     "nav.about": "O nama",
     "nav.process": "Proces",
+    "nav.portfolio": "Portfolio",
     "nav.contact": "Kontakt",
     "nav.cta": "Zatraži ponudu",
 
@@ -85,6 +86,12 @@ const translations: Record<Lang, Dict> = {
     "pricing.pro.f5": "Napredna SEO optimizacija",
     "pricing.pro.f6": "Dodatne funkcionalnosti (višejezičnost, dark/light tema i sl.)",
 
+    "portfolio.eyebrow": "Portfolio",
+    "portfolio.title": "Naši radovi",
+    "portfolio.subtitle": "Uskoro — trenutno radimo na novim projektima koje ćemo uskoro predstaviti ovdje.",
+    "portfolio.soon": "Uskoro",
+    "portfolio.placeholder": "Projekat u pripremi",
+
     "footer.tagline": "Dizajniramo digitalna iskustva koja ostavljaju utisak.",
     "footer.rights": "Sva prava zadržana.",
   },
@@ -92,6 +99,7 @@ const translations: Record<Lang, Dict> = {
     "nav.services": "Services",
     "nav.about": "About",
     "nav.process": "Process",
+    "nav.portfolio": "Portfolio",
     "nav.contact": "Contact",
     "nav.cta": "Get a quote",
 
@@ -165,6 +173,12 @@ const translations: Record<Lang, Dict> = {
     "pricing.pro.f4": "User accounts and authentication",
     "pricing.pro.f5": "Advanced SEO optimization",
     "pricing.pro.f6": "Additional features (multi-language, dark/light theme, etc.)",
+
+    "portfolio.eyebrow": "Portfolio",
+    "portfolio.title": "Our work",
+    "portfolio.subtitle": "Coming soon — we are currently working on new projects that will be showcased here.",
+    "portfolio.soon": "Coming soon",
+    "portfolio.placeholder": "Project in progress",
 
     "footer.tagline": "We design digital experiences that leave a mark.",
     "footer.rights": "All rights reserved.",
