@@ -75,7 +75,7 @@ export function Hero() {
           {t("hero.subtitle")}
         </p>
         <p className="mt-6 text-sm font-medium uppercase tracking-[0.3em] text-accent">
-          Dizajn. Razvoj. Kvalitet.
+          {t("hero.slogan")}
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <a
