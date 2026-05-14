@@ -229,6 +229,61 @@ export function Process() {
   );
 }
 
+export function Portfolio() {
+  const { t } = useI18n();
+  const items = [1, 2, 3];
+  return (
+    <section id="portfolio" className="relative border-t border-border py-24 md:py-32">
+      <div
+        className="pointer-events-none absolute inset-0 bg-grid opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="max-w-2xl">
+          <span className="text-xs font-medium uppercase tracking-wider text-accent">
+            {t("portfolio.eyebrow")}
+          </span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">
+            {t("portfolio.title")}
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            {t("portfolio.subtitle")}
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((i) => (
+            <div
+              key={i}
+              className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-[var(--shadow-soft)]"
+            >
+              <div
+                className="absolute inset-0 bg-grid opacity-40"
+                aria-hidden
+              />
+              <div
+                className="absolute inset-0 opacity-30"
+                style={{ backgroundImage: "var(--gradient-accent)" }}
+                aria-hidden
+              />
+              <div className="relative flex h-full flex-col items-center justify-center gap-2 p-6 text-center">
+                <span
+                  className="rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider text-white shadow-[var(--shadow-glow)]"
+                  style={{ backgroundImage: "var(--gradient-accent)" }}
+                >
+                  {t("portfolio.soon")}
+                </span>
+                <p className="text-sm text-muted-foreground">
+                  {t("portfolio.placeholder")}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function Pricing() {
   const { t } = useI18n();
   const plans = [
