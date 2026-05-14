@@ -17,6 +17,7 @@ const translations: Record<Lang, Dict> = {
     "hero.subtitle":
       "A&V Web Studio dizajnira i razvija brze, elegantne i skalabilne web stranice za ambiciozne brendove.",
     "hero.cta1": "Započni projekat",
+    "hero.slogan": "Dizajn. Razvoj. Kvalitet.",
     "hero.cta2": "Pogledaj usluge",
 
     "services.title": "Šta radimo",
