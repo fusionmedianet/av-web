@@ -373,8 +373,8 @@ export function Contact() {
             {t("contact.desc")}
           </p>
           <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-background/80">
-            <a href="mailto:info@avstudio.site" className="transition-colors hover:text-background">
-              info@avstudio.site
+            <a href="mailto:business@avstudio.site" className="transition-colors hover:text-background">
+              business@avstudio.site
             </a>
             <span className="hidden h-1 w-1 rounded-full bg-background/40 sm:inline-block" aria-hidden />
             <a href="tel:+38762287834" className="transition-colors hover:text-background">
